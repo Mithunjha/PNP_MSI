@@ -19,7 +19,9 @@ If you find our work or this repository useful, please consider giving a star тн
 }
 ```
 
-This repository contains the implementation of the model-based forward model, which generates simulated DEEP image stacks, and the DEEP-squared inverse model, which reconstructs de-scattered images from 32 patterned DEEP-TFM measurements.
+This repository contains the implementation of the UNet-based denoiser model as a regularizer and its integration with model-based reconstruction under the plug-and-play framework.
+
+![figure](https://github.com/user-attachments/assets/f18fd553-f206-4a02-a791-a53f40e19a03)
 
 
 ## Dataset
@@ -28,13 +30,13 @@ Find the dataset used in our work at : [https://databank.illinois.edu](https://d
 
 ## Getting Started
 ### Installation
-The deep learning algorithms were developed in Pytorch Environment : [https://pytorch.org/](https://pytorch.org/) and the forward model was implemented in MatLab.
+The algorithms were developed in the Pytorch Environment : [https://pytorch.org/](https://pytorch.org/).
 
 ```python
 pip install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio===0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 ```
 
-Run the below code to install all other dependencies.
+Run the code below to install all other dependencies.
 
 ```python
 pip install -r requirements.txt
@@ -45,7 +47,7 @@ pip install -r requirements.txt
 Use the following code to train the model for a particular dataset case and loss function.
 
 ```python
-python3 run.py --save_model_path <PATH_TO_A_FOLDER> --lossfunc <LOSS_FUNCTION> --experiment_name <EXPERIMENT_NAME> --epochs <#EPOCHS>
+python3 training.py --experiment_name <EXPERIMENT_NAME> --epochs <#EPOCHS> --data_directory <PATH_TO_DATA> --save_path <PATH_TO_A_FOLDER> --noise_level_range <[LOWER, UPPER]> 
 ```
 
 ### Plug and Play for sparse sampled ion images
@@ -53,7 +55,7 @@ python3 run.py --save_model_path <PATH_TO_A_FOLDER> --lossfunc <LOSS_FUNCTION> -
 Use the following code to evaluate the performance of the pre-trained model for any dataset case.
 
 ```python
-python3 run.py --case <CASE> --model_path <MODEL_PATH> --output_path <OUTPUT_PATH>
+python3 run.py --sampling_percentage <SAMPLING_PERCENTAGE> --max_iteration <MAX_ITER> --model_path <MODEL_PATH> --save_path <OUTPUT_PATH>
 ```
 
 ### Sample output
