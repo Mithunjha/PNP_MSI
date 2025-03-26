@@ -4,7 +4,7 @@
 Official implementation of "Integrating Model-based Reconstruction and Deep Learning for Accelerating Mass Spectrometry Imaging".
 
 ## Citation
-If you find our work or this repository useful, please consider giving a star ⭐ and a citation.
+If you find our work or this repository useful, please consider giving a star ⭐.
 
 ```
 @article{PnPMSI2025,
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 ### Training of the Denoiser
 
-Use the following code to train the model for a particular dataset case and loss function.
+Use the following code to train the denoiser model.
 
 ```python
 python3 training.py --experiment_name <EXPERIMENT_NAME> --epochs <#EPOCHS> --data_directory <PATH_TO_DATA> --save_path <PATH_TO_A_FOLDER> --noise_level_range <[LOWER, UPPER]> 
@@ -52,20 +52,22 @@ python3 training.py --experiment_name <EXPERIMENT_NAME> --epochs <#EPOCHS> --dat
 
 ### Plug and Play for sparse sampled ion images
 
-Use the following code to evaluate the performance of the pre-trained model for any dataset case.
+Use the following code to reconstruct the sparse sampled data for any sampling percentage.
 
 ```python
-python3 run.py --sampling_percentage <SAMPLING_PERCENTAGE> --max_iteration <MAX_ITER> --model_path <MODEL_PATH> --save_path <OUTPUT_PATH>
+python3 run.py --sampling_percentage <SAMPLING_PERCENTAGE> --N <IMAGE_DIMENSION> --max_iteration <MAX_ITER> --model_path <MODEL_PATH> --save_path <OUTPUT_PATH>
 ```
 
 ### Sample output
-The quantitative and qualitative output for the **rat brain FT-ICR data at sampling percentage = 50%** dataset case follows.
+The quantitative and qualitative output for the **retrospectively sampled rat brain FT-ICR data at sampling percentage = 50%** dataset case follows.
+![results](https://github.com/user-attachments/assets/5e33db68-c23d-437b-a488-7263feef2904)
 
-*Evaluation metric : mean value for the entire test dataset (standard deviation)* 
+*Evaluation metric: mean value for the entire test dataset (standard deviation)* 
 
-**SSIM** : 
+**SSIM** : 0.8079 (0.02536)
 
-**PSNR** :
+**PSNR** : 28.05457 (1.93238)
+
 
 
 
