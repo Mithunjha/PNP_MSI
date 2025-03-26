@@ -1,0 +1,9 @@
+matplotlib
+h5py
+numpy
+random
+argparse
+opencv-python
+math
+warnings
+scipy
