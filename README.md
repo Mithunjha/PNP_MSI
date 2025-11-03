@@ -59,14 +59,15 @@ python3 run.py --sampling_percentage <SAMPLING_PERCENTAGE> --N <IMAGE_DIMENSION>
 ```
 
 ### Sample output
-The quantitative and qualitative output for the **retrospectively sampled rat brain FT-ICR data at sampling percentage = 50%** dataset case follows.
-![results](https://github.com/user-attachments/assets/5e33db68-c23d-437b-a488-7263feef2904)
-
-*Evaluation metric: mean value for the entire test dataset (standard deviation)* 
+The quantitative and qualitative output for the **retrospectively sampled mouse brain FT-ICR data** dataset case follows.
+*Evaluation metric (50% sampling): mean value for the entire test dataset (standard deviation)* 
 
 **SSIM** : 0.8079 (0.02536)
 
 **PSNR** : 28.05457 (1.93238)
+![results](https://github.com/user-attachments/assets/5e33db68-c23d-437b-a488-7263feef2904)
+
+
 
 
 
