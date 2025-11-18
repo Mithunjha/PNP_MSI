@@ -9,13 +9,13 @@ If you find our work or this repository useful, please consider giving a star тн
 ```
 @article{PnPMSI2025,
   title={Integrating Model-based Reconstruction and Deep Learning for Accelerating Mass Spectrometry Imaging},
-  author={Mithunjha Anandakumar and Timothy Trinklein and Jonathan Sweedler and Fan Lam},
-  journal={},
-  volume={},
-  issue={},
-  pages={},
-  year={},
-  doi = {}
+  author={Mithunjha Anandakumar and Timothy Trinklein and Stanislav S. Rubakhin and Jonathan Sweedler and Fan Lam},
+  journal={Analytical Chemistry},
+  volume={97},
+  issue={45},
+  pages={25120-25128},
+  year={2025},
+  doi = {10.1021/acs.analchem.5c04075}
 }
 ```
 
